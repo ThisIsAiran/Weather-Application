@@ -4,6 +4,7 @@ const geocode = require('./utils/geocode.js')
 const path = require('path')
 const hbs = require('hbs')
 const app = express()
+const port = process.env.PORT || 3000
 const viewpath = path.join(__dirname, '../templates/views')
 const publicDirectoryPath = path.join(__dirname, '../public') 
 const partialPath = path.join(__dirname, '../templates/partials')
@@ -82,6 +83,6 @@ app.get('*', (req, res)=>{
 		errorMessage: "Page is totally fucked up"
 	})
 })
-app.listen(3000,()=>{
-	console.log("server start on port number 3000")
+app.listen(port,()=>{
+	console.log("server start on port number " +  port)
 })
